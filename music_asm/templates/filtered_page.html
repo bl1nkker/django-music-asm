@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+{% if genre %}
+<div>Filtered by: {{ genre }}</div>
+{% endif %}
+
+{% if artist %}
+<div>Filtered by: {{ artist }}</div>
+{% endif %}
+
+{% if composition %}
+<div>Filtered by: {{ composition }}</div>
+{% endif %}
+{% endblock %}
