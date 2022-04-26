@@ -5,6 +5,6 @@ from django_music_asm import settings
 from music_asm.main_views import index
 
 urlpatterns = [
-    path('main/', index, name='index'),
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

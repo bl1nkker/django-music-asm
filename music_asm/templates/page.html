@@ -7,7 +7,11 @@
 <div class="row">
     {% include "main_side_nav.html" %}
     
+    {% if selected_compositions %}
+    {% include "filtered_page.html" %}
+    {% else %}
     {% include "main_content.html" %}
+    {% endif %}
     
 </div>
 {% endblock %}

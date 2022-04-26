@@ -32,6 +32,4 @@ def index(request):
                 title=composition)
             context['composition'] = composition
         context['selected_compositions'] = selected_compositions
-        return render(request, 'filtered_page.html', context)
-
-    return render(request, 'page.html')
+    return render(request, 'page.html', context)
