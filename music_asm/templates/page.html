@@ -6,12 +6,13 @@
 {% block main %}
 <div class="row">
     {% include "main_side_nav.html" %}
-    
-    {% if selected_compositions %}
-    {% include "filtered_page.html" %}
-    {% else %}
-    {% include "main_content.html" %}
-    {% endif %}
+    <div class="col-7 px-5">
+        {% if selected_compositions %}
+        {% include "content_filtered.html" %}
+        {% else %}
+        {% include "content_main.html" %}
+        {% endif %}
+    </div>
     
 </div>
 {% endblock %}

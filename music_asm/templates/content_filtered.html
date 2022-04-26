@@ -10,3 +10,7 @@
 {% if composition %}
 <div>Filtered by: {{ composition }}</div>
 {% endif %}
+
+{% for composition in selected_compositions %}
+<p>{{ composition.title }}</p>
+{% endfor %}
