@@ -25,3 +25,16 @@ def get_plot(x, y, x_label, y_label):
     plt.tight_layout()
     graph = get_graph()
     return graph
+
+
+def get_bar_plot(x, y, x_label, y_label):
+    plt.switch_backend('agg')
+    plt.figure(figsize=(10, 5))
+    plt.title('Listenings')
+    plt.bar(x, y)
+    plt.xticks(rotation=45)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.tight_layout()
+    graph = get_graph()
+    return graph
