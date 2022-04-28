@@ -1,18 +1,27 @@
 {% extends "base.html" %}
 
 {% block title %}
+{% if genre %}
+Filtered by: {{ genre }}
+{% endif %}
+
+{% if artist %}
+Filtered by: {{ artist }}
+{% endif %}
+
+{% if composition %}
+Filtered by: {{ composition }}
+
+{% else %}
+Main content
+
+{% endif %}
 {% endblock %}
 
 {% block main %}
-<div class="row">
-    {% include "main_side_nav.html" %}
-    <div class="col-7 px-5">
         {% if composition or genre or artist %}
-        {% include "content_filtered.html" %}
+        <img src="data:image/png;base64,{{ chart|safe }}" />
         {% else %}
         {% include "content_main.html" %}
         {% endif %}
-    </div>
-    
-</div>
 {% endblock %}

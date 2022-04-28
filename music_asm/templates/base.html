@@ -6,28 +6,58 @@
     <title>Music Analytics</title>
     <script src="/static/js/font_awsome.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="/static/css/index.css" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <nav class="pym2 bg-light border-bottom d-flex" style="flex-direction: row">
+    <nav class="pym2 bg-light border-bottom d-flex" style="flex-direction: row; padding: 20px 10px; background-color: var(--primary-color) !important; color: white; font-size: 24px;">
         <div class="logo">
             Musichka eheheheheh
         </div>
         
     </nav>
 </header>
-
-    <div class="container py-4">
-        <h2 class="my-4">
+<div class="row gx-5">
+    <div class="col-3 panel side_nav">
+        <section class="filter_container">
+    <h5>Top 10 Genres</h5>
+    <div class="d-flex flex-column filter_content">
+        {% for genre in genres %}
+            <a href="/?genre={{ genre.genre }}">{{ genre.genre }}</a>
+            <hr />
+        {% endfor %}
+    </div>
+</section>
+<section class="filter_container">
+    <h5>Top 10 Artists</h5>
+    <div class="d-flex flex-column filter_content">
+        {% for artist in artists %}
+            <a href="/?artist={{ artist.artist }}">{{ artist.artist }}</a>
+            <hr />
+        {% endfor %}
+    </div>
+</section>
+<section class="filter_container">
+    <h5>Top 10 Compositions</h5>
+    <div class="d-flex flex-column filter_content">
+        {% for composition in compositions %}
+            <a href="/?composition={{ composition.title }}">{{ composition.title }}</a>
+            <hr />
+        {% endfor %}
+    </div>
+</section>
+    </div>
+    <div class="col-7 px-5">
+        <h2 class="my-4 page_title">
             {% block title %}
             {% endblock %}
         </h2>
-    </div>
-    <div class="mt-4">
         {% block main %}
         {% endblock %}
     </div>
+</div>
+
 
 </body>
 </html>
