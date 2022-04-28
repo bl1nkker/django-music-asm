@@ -46,6 +46,8 @@ def index(request):
             x_label = 'Compositions'
             y_label = 'Listenings'
             chart = get_bar_plot(x_data, y_data, x_label, y_label)
+            artist_compositions = Composition.objects.filter(artist=artist)
+            context['artist_compositions'] = artist_compositions
         if composition:
             selected_composition = Composition.objects.get(title=composition)
             context['composition'] = composition

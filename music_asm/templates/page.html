@@ -21,6 +21,15 @@ Main content
 {% block main %}
         {% if composition or genre or artist %}
         <img src="data:image/png;base64,{{ chart|safe }}" />
+        {% if artist_compositions %}
+            <section class="artist_compositions">
+                <h3>All Compositions</h3>
+                {% for composition in artist_compositions %}
+                <a href="/?composition={{ composition.title }}">{{ composition.title }}</a>
+                <hr />
+                {% endfor %}
+            </section>
+        {% endif %}
         {% else %}
         {% include "content_main.html" %}
         {% endif %}
