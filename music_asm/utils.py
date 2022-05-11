@@ -17,7 +17,7 @@ def get_graph():
 def get_plot(x, y, x_label, y_label):
     plt.switch_backend('agg')
     plt.figure(figsize=(10, 5))
-    plt.title('Listenings')
+    plt.title('')
     plt.plot(x, y)
     plt.xticks(rotation=45)
     plt.xlabel(x_label)
@@ -30,7 +30,7 @@ def get_plot(x, y, x_label, y_label):
 def get_bar_plot(x, y, x_label, y_label):
     plt.switch_backend('agg')
     plt.figure(figsize=(10, 5))
-    plt.title('Listenings')
+    plt.title('')
     plt.bar(x, y)
     plt.xticks(rotation=45)
     plt.xlabel(x_label)

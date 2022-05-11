@@ -38,7 +38,7 @@
           <h5>Top 10 Artists</h5>
           <div class="d-flex flex-column filter_content">
             {% for director in directors %}
-            <a href="/?artist={{ director.director }}"
+            <a href="/?director={{ director.director }}"
               >{{ director.director }}</a
             >
             <hr />
@@ -49,7 +49,7 @@
           <h5>Top 10 Compositions</h5>
           <div class="d-flex flex-column filter_content">
             {% for movie in movies %}
-            <a href="/?composition={{ movie.title }}">{{ movie.title }}</a>
+            <a href="/?movie={{ movie.title }}">{{ movie.title }}</a>
             <hr />
             {% endfor %}
           </div>
