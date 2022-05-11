@@ -1,30 +1,29 @@
-{% extends "base.html" %}
-{% block nav %}
+{% extends "base.html" %} {% block nav %}
 <section class="filter_container">
-    <h5>Top 10 Genres</h5>
-    <div class="d-flex flex-column filter_content">
-        {% for genre in genres %}
-            <a href="/?genre={{ genre.genre }}">{{ genre.genre }}</a>
-            <hr />
-        {% endfor %}
-    </div>
+  <h5>Top 10 Genres</h5>
+  <div class="d-flex flex-column filter_content">
+    {% for genre in genres %}
+    <a href="/?genre={{ genre.genre }}">{{ genre.genre }}</a>
+    <hr />
+    {% endfor %}
+  </div>
 </section>
 <section class="filter_container">
-    <h5>Top 10 Artists</h5>
-    <div class="d-flex flex-column filter_content">
-        {% for artist in artists %}
-            <a href="/?artist={{ artist.artist }}">{{ artist.artist }}</a>
-            <hr />
-        {% endfor %}
-    </div>
+  <h5>Top 10 Artists</h5>
+  <div class="d-flex flex-column filter_content">
+    {% for director in directors %}
+    <a href="/?artist={{ director.director }}">{{ director.director }}</a>
+    <hr />
+    {% endfor %}
+  </div>
 </section>
 <section class="filter_container">
-    <h5>Top 10 Compositions</h5>
-    <div class="d-flex flex-column filter_content">
-        {% for composition in compositions %}
-            <a href="/?composition={{ composition.title }}">{{ composition.title }}</a>
-            <hr />
-        {% endfor %}
-    </div>
+  <h5>Top 10 Compositions</h5>
+  <div class="d-flex flex-column filter_content">
+    {% for movie in movies %}
+    <a href="/?composition={{ movie.title }}">{{ movie.title }}</a>
+    <hr />
+    {% endfor %}
+  </div>
 </section>
 {% endblock %}
